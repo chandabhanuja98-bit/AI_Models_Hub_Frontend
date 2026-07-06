@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 
 export default function MobilePricePrediction() {
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
   const [battery_power, setBattery_power] = useState("");
   const [dual_sim, setDual_sim] = useState("");
@@ -27,7 +28,7 @@ export default function MobilePricePrediction() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/mobilepriceprediction",
+            `${BACKEND_URL}/mobilepriceprediction`,
             {
                 method: "POST",
 

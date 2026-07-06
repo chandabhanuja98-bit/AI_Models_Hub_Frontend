@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 
 export default function LoanApprovalPrediction() {
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
   const [income, setIncome] = useState("");
   const [creditScore, setCreditScore] = useState("");
@@ -20,7 +21,7 @@ export default function LoanApprovalPrediction() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:5000/loanApprovalPrediction",
+        `${BACKEND_URL}/loanApprovalPrediction`,
         {
           method: "POST",
 

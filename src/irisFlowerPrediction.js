@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function IrisFlowerPrediction() {
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
   const [sepalLength, setSepalLength] = useState("");
   const [sepalWidth, setSepalWidth] = useState("");
   const [petalLength, setPetalLength] = useState("");
@@ -18,7 +19,7 @@ export default function IrisFlowerPrediction() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/irisflowerprediction",
+        `${BACKEND_URL}/irisflowerprediction`,
         {
           method: "POST",
 

@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 
 export default function HousePricePrediction() {
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
   const [bedrooms, setBedrooms] = useState("");
   const [yearBuilt, setYearBuilt] = useState("");
   const [yearRemodAdd, setYearRemodAdd] = useState("");
@@ -24,7 +25,7 @@ export default function HousePricePrediction() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/housepriceprediction",
+            `${BACKEND_URL}/housepriceprediction`,
             {
                 method: "POST",
 
